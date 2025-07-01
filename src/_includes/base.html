@@ -1,24 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} - {% endif %}{{ business.name }}</title>
-    <meta name="description" content="{% if description %}{{ description }}{% else %}{{BUSINESS_DEFAULT_DESCRIPTION}}{% endif %}">
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ business.description }}{% endif %}">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="font-body bg-gradient-to-br from-primary-50 to-accent-50 min-h-screen">
-    <!-- TEMPLATE_SECTION: Navigation - customize links and logo -->
-    <nav class="bg-white shadow-md">
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl lg:text-3xl font-bold text-teal-600">
+                        {{ business.name }}
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">Hjem</a>
+                    <a href="/contact" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">Kontakt</a>
+                    <a href="tel:{{ business.phone | replace(' ', '') }}" 
+                       class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg transition-colors">
+                        📞 {{ business.phone }}
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-gray-200">
+                <div class="pt-4 space-y-3">
+                    <a href="/" class="block text-gray-700 hover:text-teal-600 font-medium py-2">Hjem</a>
+                    <a href="/contact" class="block text-gray-700 hover:text-teal-600 font-medium py-2">Kontakt</a>
+                    <a href="tel:{{ business.phone | replace(' ', '') }}" 
+                       class="block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 rounded-lg text-center transition-colors">
+                        📞 Ring {{ business.phone }}
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <!-- TEMPLATE_SECTION: Main content area -->
-    <main>
+    <!-- Main content area -->
+    <main class="flex-grow">
         {{ content | safe}}
     </main>
 
-    <!-- TEMPLATE_SECTION: Footer - customize contact info and links -->
-    <footer class="bg-primary-800 text-white py-8 mt-12">
+    <!-- Footer with opening hours -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">{{ business.name }}</h3>
+                    <p class="text-gray-300 mb-4">{{ business.motto }}</p>
+                    <p class="text-gray-300">{{ business.address.full }}</p>
+                    <p class="text-gray-300">{{ business.serviceArea }}</p>
+                </div>
+
+                <!-- Opening Hours -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">📅 Åbningstider</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p><span class="font-medium">Man-Tor:</span> {{ business.hours.monday }}</p>
+                        <p><span class="font-medium">Fredag:</span> {{ business.hours.friday }}</p>
+                        <p><span class="font-medium">Weekend:</span> {{ business.hours.saturday }}</p>
+                        <p class="text-red-400 font-semibold mt-3">🚨 {{ business.hours.emergency }}</p>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">🔧 Tjenester</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        {% for service in business.services %}
+                        <li>{{ service }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">📞 Kontakt</h3>
+                    <div class="space-y-3">
+                        <a href="tel:{{ business.phone | replace(' ', '') }}" 
+                           class="block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 rounded-lg text-center transition-colors">
+                            Ring {{ business.phone }}
+                        </a>
+                        <a href="/contact" 
+                           class="block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg text-center transition-colors">
+                            Kontaktformular
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2024 {{ business.name }}. Alle rettigheder forbeholdes.</p>
+                <p class="mt-2">{{ business.motto }}</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

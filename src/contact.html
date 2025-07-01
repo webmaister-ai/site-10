@@ -1,7 +1,176 @@
 ---
 layout: base.html
-title: Contact Us
-description: Contact page
+title: Kontakt
+description: Kontakt Vandtæt VVS - Ring 12 23 43 54 eller send en besked. Vi tilbyder professionel VVS-service på hele Fyn
 ---
 
-<!-- Place the contact section here -->
+<!-- Contact Hero -->
+<section class="bg-gradient-to-r from-teal-700 to-blue-900 text-white py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6">Kontakt {{ business.name }}</h1>
+      <p class="text-xl mb-8">{{ business.motto }}</p>
+      <p class="text-lg">Vi er klar til at hjælpe dig med alle dine VVS-behov</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12">
+        
+        <!-- Contact Details -->
+        <div>
+          <h2 class="text-3xl font-bold mb-8 text-gray-800">Kontaktoplysninger</h2>
+          
+          <!-- Phone -->
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
+            <div class="flex items-center mb-2">
+              <span class="text-2xl mr-3">📞</span>
+              <h3 class="text-xl font-semibold text-gray-800">Ring til os</h3>
+            </div>
+            <a href="tel:{{ business.phone | replace(' ', '') }}" 
+               class="text-2xl font-bold text-yellow-600 hover:text-yellow-700">
+              {{ business.phone }}
+            </a>
+            <p class="text-gray-600 mt-2">Vi svarer hurtigt på opkald i vores åbningstider</p>
+          </div>
+
+          <!-- Emergency Service -->
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
+            <div class="flex items-center mb-2">
+              <span class="text-2xl mr-3">🚨</span>
+              <h3 class="text-xl font-semibold text-gray-800">Akutservice</h3>
+            </div>
+            <p class="text-lg font-semibold text-red-600">{{ business.hours.emergency }}</p>
+            <p class="text-gray-600 mt-2">Vi hjælper ved akutte VVS-problemer</p>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
+            <div class="flex items-center mb-2">
+              <span class="text-2xl mr-3">📍</span>
+              <h3 class="text-xl font-semibold text-gray-800">Lokation</h3>
+            </div>
+            <p class="text-lg font-semibold text-blue-600">{{ business.address.full }}</p>
+            <p class="text-gray-600 mt-2">{{ business.serviceArea }}</p>
+          </div>
+
+          <!-- Opening Hours -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">📅 Åbningstider</h3>
+            <div class="space-y-2 text-gray-700">
+              <p><span class="font-medium">Mandag-Torsdag:</span> {{ business.hours.monday }}</p>
+              <p><span class="font-medium">Fredag:</span> {{ business.hours.friday }}</p>
+              <p><span class="font-medium">Weekend:</span> {{ business.hours.saturday }}</p>
+              <p class="text-red-600 font-medium mt-3">{{ business.hours.emergency }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h2 class="text-3xl font-bold mb-6 text-gray-800">Send os en besked</h2>
+          
+          <form class="space-y-6" action="#" method="POST">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Navn *</label>
+              <input type="text" id="name" name="name" required
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon *</label>
+              <input type="tel" id="phone" name="phone" required
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <input type="email" id="email" name="email"
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+            </div>
+
+            <div>
+              <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Type service</label>
+              <select id="service" name="service"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                <option value="">Vælg service type</option>
+                {% for service in business.services %}
+                <option value="{{ service }}">{{ service }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Besked *</label>
+              <textarea id="message" name="message" rows="5" required
+                        placeholder="Beskriv dit VVS-problem eller ønske..."
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"></textarea>
+            </div>
+
+            <div>
+              <label class="flex items-start space-x-3">
+                <input type="checkbox" class="mt-1 h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500">
+                <span class="text-sm text-gray-600">
+                  Jeg ønsker at blive kontaktet hurtigst muligt vedrørende mit VVS-problem
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" 
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors">
+              Send Besked
+            </button>
+          </form>
+
+          <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p class="text-sm text-blue-800">
+              <strong>Haster det?</strong> Ring direkte til os på 
+              <a href="tel:{{ business.phone | replace(' ', '') }}" class="font-bold underline">{{ business.phone }}</a> 
+              for hurtig hjælp
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Areas -->
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 text-gray-800">Vi betjener hele Fyn</h2>
+      <p class="text-lg text-gray-700 mb-8">
+        Med base i {{ business.address.full }} kører vi ud til kunder over hele Fyn. 
+        Uanset om du bor i en stor by eller en mindre landsby, er vi klar til at hjælpe.
+      </p>
+      
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-4xl mb-2">🏠</div>
+          <h3 class="font-semibold text-gray-800">Private</h3>
+          <p class="text-sm text-gray-600">Husstande</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-2">🏢</div>
+          <h3 class="font-semibold text-gray-800">Erhverv</h3>
+          <p class="text-sm text-gray-600">Virksomheder</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-2">🏗️</div>
+          <h3 class="font-semibold text-gray-800">Byggeri</h3>
+          <p class="text-sm text-gray-600">Entreprenører</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-2">🔑</div>
+          <h3 class="font-semibold text-gray-800">Ejendomme</h3>
+          <p class="text-sm text-gray-600">Administratorer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
