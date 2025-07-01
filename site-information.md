@@ -8,7 +8,7 @@
 
 **Lokation:** Otterup, Nordfyn
 
-**Telefonnummer:** 12 23 43 54
+**Telefonnummer:** 66 18 22 22
 
 **Firma-motto:** "Kvalitet der holder vand - siden dag ét"
 
