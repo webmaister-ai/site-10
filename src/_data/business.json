@@ -1,28 +1,33 @@
 {
-  "name": "{{BUSINESS_NAME}}",
-  "phone": "{{BUSINESS_PHONE}}",
+  "name": "Vandtæt VVS",
+  "phone": "12 23 43 54",
   "address": {
-    "street": "{{BUSINESS_ADDRESS_STREET}}",
-    "city": "{{BUSINESS_ADDRESS_CITY}}",
-    "state": "{{BUSINESS_ADDRESS_STATE}}",
-    "zip": "{{BUSINESS_ADDRESS_ZIP}}",
-    "full": "{{BUSINESS_ADDRESS_FULL}}"
+    "city": "Otterup",
+    "region": "Nordfyn",
+    "full": "Otterup, Nordfyn"
   },
   "hours": {
-    "monday": "{{BUSINESS_HOURS_MONDAY}}",
-    "tuesday": "{{BUSINESS_HOURS_TUESDAY}}", 
-    "wednesday": "{{BUSINESS_HOURS_WEDNESDAY}}",
-    "thursday": "{{BUSINESS_HOURS_THURSDAY}}",
-    "friday": "{{BUSINESS_HOURS_FRIDAY}}",
-    "saturday": "{{BUSINESS_HOURS_SATURDAY}}",
-    "sunday": "{{BUSINESS_HOURS_SUNDAY}}",
-    "weekdays": "{{BUSINESS_HOURS_WEEKDAYS_DISPLAY}}",
-    "weekend": "{{BUSINESS_HOURS_WEEKEND_DISPLAY}}"
+    "monday": "07:00-16:00",
+    "tuesday": "07:00-16:00", 
+    "wednesday": "07:00-16:00",
+    "thursday": "07:00-16:00",
+    "friday": "07:00-15:00",
+    "saturday": "Lukket",
+    "sunday": "Lukket",
+    "weekdays": "Mandag-torsdag: 07:00-16:00",
+    "friday": "Fredag: 07:00-15:00",
+    "weekend": "Weekend: Lukket",
+    "emergency": "Akutservice efter aftale"
   },
-  "email": "{{BUSINESS_EMAIL}}",
-  "social": {
-    "facebook": "{{BUSINESS_FACEBOOK_URL}}",
-    "instagram": "{{BUSINESS_INSTAGRAM_URL}}"
-  },
-  "language": "{{SITE_LANGUAGE}}"
+  "motto": "Kvalitet der holder vand - siden dag ét",
+  "description": "Professionel VVS-virksomhed på Fyn - Vi tilbyder kvalitets VVS-løsninger til private og erhverv med akutservice",
+  "services": [
+    "Vandinstallationer",
+    "Varmeanlæg",
+    "Badeværelsesrenovering", 
+    "Akut service og reparationer",
+    "Eftersyn og vedligeholdelse"
+  ],
+  "serviceArea": "Hele Fyn med base i Otterup",
+  "language": "da"
 }

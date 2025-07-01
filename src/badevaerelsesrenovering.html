@@ -1,0 +1,191 @@
+---
+layout: base.html
+title: Badeværelsesrenovering
+description: Professionel badeværelsesrenovering på Fyn - Vi leverer komplet renovering af badeværelser med fokus på kvalitet og energibesparelser
+---
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-900 to-teal-700 text-white py-16 lg:py-24">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl lg:text-6xl font-bold mb-6">🛁 Badeværelsesrenovering</h1>
+      <p class="text-xl lg:text-2xl mb-8 text-blue-100">Fra drøm til virkelighed</p>
+      <p class="text-lg lg:text-xl mb-8">Komplet renovering af dit badeværelse med fokus på kvalitet, funktionalitet og energibesparelser</p>
+      
+      <!-- Contact Info -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
+        <a href="tel:{{ business.phone | replace(' ', '') }}" 
+           class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg flex items-center gap-2 transition-colors">
+          📞 Ring for tilbud: {{ business.phone }}
+        </a>
+        <div class="bg-red-600 text-white py-3 px-6 rounded-lg font-semibold">
+          🚨 {{ business.hours.emergency }}
+        </div>
+      </div>
+      
+      <p class="text-blue-200">{{ business.serviceArea }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Renovate Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-800">Hvorfor renovere dit badeværelse?</h2>
+      
+      <div class="text-lg text-gray-700 leading-relaxed space-y-6">
+        <p>
+          Et renoveret badeværelse er en af de bedste investeringer du kan foretage i dit hjem. Det er ikke kun et spørgsmål om æstetik – det handler om at skabe et rum, der fungerer optimalt for dig og din familie, samtidig med at du øger din boligs værdi betydeligt.
+        </p>
+        
+        <p>
+          Moderne badeværelser er designet til at være både funktionelle og energieffektive. Ved at opgradere til nye installationer, armaturer og isolering kan du opnå en markant reduktion i dit vandforbrug og energiforbrug, hvilket ikke kun er godt for miljøet, men også for din økonomi på lang sigt.
+        </p>
+        
+        <p>
+          Derudover giver et nyrenoveret badeværelse dig mulighed for at skabe et personligt wellness-rum i dit eget hjem. Med de rette materialer og løsninger kan dit badeværelse blive et sted, hvor du kan slappe af og lade op efter en lang dag. Samtidig sikrer professionel installation, at alt fungerer perfekt i mange år fremover.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Energy Improvements Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-800">💚 Energiforbedringer ved renovering</h2>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-2xl font-semibold mb-6 text-teal-600">Vandforbrug og energibesparelser:</h3>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-800">💧 Vandbesparende løsninger</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <span class="text-green-500 font-bold">•</span>
+                <span>Lavflow toiletter - reducerer vandforbrug med op til 60%</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500 font-bold">•</span>
+                <span>Vandbesparende brusearmaturer med flow-begrænsere</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500 font-bold">•</span>
+                <span>Sensor-aktiverede vandhaner - stopper automatisk vandspild</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500 font-bold">•</span>
+                <span>Termostatblandere - reducerer vandspild ved temperaturjustering</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500 font-bold">•</span>
+                <span>Vandgenbrugs-systemer til håndvask og toiletskyl</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-800">🔥 Energioptimering</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <span class="text-orange-500 font-bold">•</span>
+                <span>Gulvvarme med energieffektive pumper og styring</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-orange-500 font-bold">•</span>
+                <span>Forbedret isolering af rør - reducerer varmetab</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-orange-500 font-bold">•</span>
+                <span>LED-belysning med bevægelsessensorer</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-orange-500 font-bold">•</span>
+                <span>Ventilation med varmegenvinding</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-orange-500 font-bold">•</span>
+                <span>Smart styring af varme og ventilation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-8 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
+          <h4 class="text-xl font-semibold mb-3 text-green-800">📊 Potentielle besparelser</h4>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-green-600">30-50%</div>
+              <div class="text-sm text-green-700">Reduktion i vandforbrug</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-green-600">20-35%</div>
+              <div class="text-sm text-green-700">Besparelse på opvarmning</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-green-600">15-25%</div>
+              <div class="text-sm text-green-700">Lavere elforbrug</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Services Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-800">Vores renoverings-tjenester</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-4xl mb-4">🔧</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Komplet renovering</h3>
+          <p class="text-gray-600">Fra design til færdig installation - vi håndterer hele processen for dig.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-4xl mb-4">🚿</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Bruse- og karinstallation</h3>
+          <p class="text-gray-600">Professionel installation af brusekabiner, badekar og tilhørende VVS-installationer.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-4xl mb-4">🔥</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Gulvvarme</h3>
+          <p class="text-gray-600">Installation af energieffektiv gulvvarme for optimal komfort og varmefordeling.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-4xl mb-4">💧</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">VVS-installationer</h3>
+          <p class="text-gray-600">Alle typer rør- og vandinstallationer med fokus på kvalitet og holdbarhed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="py-16 bg-teal-600 text-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Klar til at renovere dit badeværelse?</h2>
+    <p class="text-xl mb-8">Kontakt os i dag for et uforpligtende tilbud og rådgivning</p>
+    
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <a href="tel:{{ business.phone | replace(' ', '') }}" 
+         class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+        📞 {{ business.phone }}
+      </a>
+      <a href="/contact" 
+         class="bg-white hover:bg-gray-100 text-teal-600 font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+        ✉️ Kontaktformular
+      </a>
+    </div>
+  </div>
+</section>
