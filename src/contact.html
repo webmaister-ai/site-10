@@ -19,8 +19,7 @@ description: Kontakt Vandtæt VVS - Ring 12 23 43 54 eller send en besked. Vi ti
 <section class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12">
-        
+      <div class="max-w-4xl mx-auto">
         <!-- Contact Details -->
         <div>
           <h2 class="text-3xl font-bold mb-8 text-gray-800">Kontaktoplysninger</h2>
@@ -67,71 +66,6 @@ description: Kontakt Vandtæt VVS - Ring 12 23 43 54 eller send en besked. Vi ti
               <p><span class="font-medium">Weekend:</span> {{ business.hours.saturday }}</p>
               <p class="text-red-600 font-medium mt-3">{{ business.hours.emergency }}</p>
             </div>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="bg-gray-50 p-8 rounded-lg">
-          <h2 class="text-3xl font-bold mb-6 text-gray-800">Send os en besked</h2>
-          
-          <form class="space-y-6" action="#" method="POST">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Navn *</label>
-              <input type="text" id="name" name="name" required
-                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
-            </div>
-
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon *</label>
-              <input type="tel" id="phone" name="phone" required
-                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-              <input type="email" id="email" name="email"
-                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
-            </div>
-
-            <div>
-              <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Type service</label>
-              <select id="service" name="service"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
-                <option value="">Vælg service type</option>
-                {% for service in business.services %}
-                <option value="{{ service }}">{{ service }}</option>
-                {% endfor %}
-              </select>
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Besked *</label>
-              <textarea id="message" name="message" rows="5" required
-                        placeholder="Beskriv dit VVS-problem eller ønske..."
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"></textarea>
-            </div>
-
-            <div>
-              <label class="flex items-start space-x-3">
-                <input type="checkbox" class="mt-1 h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500">
-                <span class="text-sm text-gray-600">
-                  Jeg ønsker at blive kontaktet hurtigst muligt vedrørende mit VVS-problem
-                </span>
-              </label>
-            </div>
-
-            <button type="submit" 
-                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors">
-              Send Besked
-            </button>
-          </form>
-
-          <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-            <p class="text-sm text-blue-800">
-              <strong>Haster det?</strong> Ring direkte til os på 
-              <a href="tel:{{ business.phone | replace(' ', '') }}" class="font-bold underline">{{ business.phone }}</a> 
-              for hurtig hjælp
-            </p>
           </div>
         </div>
       </div>
