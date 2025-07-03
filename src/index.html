@@ -14,10 +14,13 @@ description: Professionel VVS-virksomhed på Fyn - Vi tilbyder kvalitets VVS-lø
       
       <!-- Contact Info -->
       <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
-        <a href="tel:{{ business.phone | replace(' ', '') }}" 
-           class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg flex items-center gap-2 transition-colors">
-          📞 Ring Nu: {{ business.phone }}
-        </a>
+        <div class="text-center">
+          <a href="tel:{{ business.phone | replace(' ', '') }}" 
+             class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg flex items-center gap-2 transition-colors">
+            📞 Ring Nu: {{ business.phone }}
+          </a>
+          <p class="text-blue-200 mt-2 text-sm">{{ business.hours.weekdays }}</p>
+        </div>
         <div class="bg-red-600 text-white py-3 px-6 rounded-lg font-semibold">
           🚨 {{ business.hours.emergency }}
         </div>
