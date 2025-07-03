@@ -34,7 +34,21 @@ description: Kontakt Vandtæt VVS - Ring 12 23 43 54 eller send en besked. Vi ti
                class="text-2xl font-bold text-yellow-600 hover:text-yellow-700">
               {{ business.phone }}
             </a>
-            <p class="text-gray-600 mt-2">Vi svarer hurtigt på opkald i vores åbningstider</p>
+            <p class="text-gray-600 mt-2">Vi svarer på opkald mellem 10:00-12:00 på hverdage</p>
+          </div>
+
+          <!-- Email -->
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
+            <div class="flex items-center mb-2">
+              <span class="text-2xl mr-3">✉️</span>
+              <h3 class="text-xl font-semibold text-gray-800">Send os en email</h3>
+            </div>
+            <p class="text-lg text-gray-700 mb-2">
+              Vi modtager altid gerne en email og svarer så hurtigt som muligt.
+            </p>
+            <p class="text-gray-600">
+              Beskriv gerne dit projekt eller problem i detaljer, så vi kan give dig det bedste svar.
+            </p>
           </div>
 
           <!-- Emergency Service -->
@@ -61,8 +75,7 @@ description: Kontakt Vandtæt VVS - Ring 12 23 43 54 eller send en besked. Vi ti
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="text-xl font-semibold mb-4 text-gray-800">📅 Åbningstider</h3>
             <div class="space-y-2 text-gray-700">
-              <p><span class="font-medium">Mandag-Torsdag:</span> {{ business.hours.monday }}</p>
-              <p><span class="font-medium">Fredag:</span> {{ business.hours.friday }}</p>
+              <p><span class="font-medium">Mandag-Fredag:</span> {{ business.hours.monday }}</p>
               <p><span class="font-medium">Weekend:</span> {{ business.hours.saturday }}</p>
               <p class="text-red-600 font-medium mt-3">{{ business.hours.emergency }}</p>
             </div>

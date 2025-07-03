@@ -7,15 +7,15 @@
     "full": "Otterup, Nordfyn"
   },
   "hours": {
-    "monday": "07:00-16:00",
-    "tuesday": "07:00-16:00", 
-    "wednesday": "07:00-16:00",
-    "thursday": "07:00-16:00",
-    "friday": "07:00-15:00",
+    "monday": "10:00-12:00",
+    "tuesday": "10:00-12:00", 
+    "wednesday": "10:00-12:00",
+    "thursday": "10:00-12:00",
+    "friday": "10:00-12:00",
     "saturday": "Lukket",
     "sunday": "Lukket",
-    "weekdays": "Mandag-torsdag: 07:00-16:00",
-    "friday": "Fredag: 07:00-15:00",
+    "weekdays": "Mandag-fredag: 10:00-12:00",
+    "friday": "Fredag: 10:00-12:00",
     "weekend": "Weekend: Lukket",
     "emergency": "Akutservice efter aftale"
   },
