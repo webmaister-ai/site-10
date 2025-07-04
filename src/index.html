@@ -16,7 +16,7 @@ description: Professionel VVS-virksomhed på Fyn - Vi tilbyder kvalitets VVS-lø
       <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
         <div class="text-center">
           <a href="tel:{{ business.phone | replace(' ', '') }}" 
-             class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg flex items-center gap-2 transition-colors">
+             class="bg-green-500 hover:bg-green-600 text-black font-bold py-4 px-8 rounded-lg text-lg flex items-center gap-2 transition-colors">
             📞 Ring Nu: {{ business.phone }}
           </a>
           <p class="text-blue-200 mt-2 text-sm">{{ business.hours.weekdays }}</p>
@@ -102,7 +102,7 @@ description: Professionel VVS-virksomhed på Fyn - Vi tilbyder kvalitets VVS-lø
     
     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
       <a href="tel:{{ business.phone | replace(' ', '') }}" 
-         class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+         class="bg-green-500 hover:bg-green-600 text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
         📞 {{ business.phone }}
       </a>
       <a href="/contact" 
